@@ -17,7 +17,8 @@ app.post('/', async (req, res) => {
         const targetResponse = await axios({
             method: 'post',
             url: targetUrl,
-            data: requestBody
+            data: requestBody,
+            headers: req.headers
         });
         res.status = targetResponse.status;
         return res.send(targetResponse.data)

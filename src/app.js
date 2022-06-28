@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/', async (req, res) => {
     try {
         let requestBody = req.body;
-        const targetUrl = requestBody.targetUrl;
+        const targetUrl = requestBody.TargetUrl ? requestBody.TargetUrl : requestBody.targetUrl;
         delete requestBody.targetUrl;
         const targetResponse = await axios({
             method: 'post',

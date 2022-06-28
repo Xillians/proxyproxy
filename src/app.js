@@ -24,7 +24,7 @@ app.post('/', async (req, res) => {
         console.log(targetResponse);
         return res.send(targetResponse.data)
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
         res.status(error.response.status);
         res.send({
             "Error": error.message    

@@ -21,8 +21,10 @@ app.post('/', async (req, res) => {
             headers: req.headers
         });
         res.status = targetResponse.status;
+        console.log(targetResponse);
         return res.send(targetResponse.data)
     } catch (error) {
+        console.log(error.message);
         res.status(error.response.status);
         res.send({
             "Error": error.message    
